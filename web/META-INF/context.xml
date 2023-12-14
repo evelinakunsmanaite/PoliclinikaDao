@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/PoliclinikaDao"/>
+<Context path="/PoliclinikaDao">
+  <Resource auth="Container"
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            name="jdbc/policlinika"
+            password="evelina2002"
+            type="javax.sql.DataSource"
+            url="jdbc:mysql://127.0.0.1:3306/policlinika"
+            username="root">
+  </Resource>
+  </Context>

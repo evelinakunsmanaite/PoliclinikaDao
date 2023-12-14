@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                             http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>check</short-name>
+    <uri>/WEB-INF/tlds/check</uri>
+    <function>
+        <name>getErrors</name>
+        <function-class>com.errors.ValidationError</function-class>
+        <function-signature>
+            com.errors.ValidationError getErrors(com.errors.ValidationError)
+        </function-signature>
+    </function>
+</taglib>
