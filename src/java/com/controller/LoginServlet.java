@@ -6,6 +6,8 @@ import com.model.User;
 import com.model.Admin;
 import com.validator.Validator;
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,7 +50,15 @@ public class LoginServlet extends InitServlet implements Jumpable {
             jump("/WEB-INF/jsp/adminF.jsp", request, response);
 
         } else {
-            request.setAttribute("error", "Ошибка авторизации, пожалуйста повторите попытку!");
+             Locale userLocale = request.getLocale();
+
+        // Load the appropriate ResourceBundle based on the user's locale
+        ResourceBundle bundle = ResourceBundle.getBundle("com.localization.messages.msg", userLocale);
+
+        // Use the ResourceBundle to get the localized messages
+        String failureMessage = bundle.getString("error.log");
+
+            request.setAttribute("error", failureMessage);
             jump("/WEB-INF/jsp/error.jsp", request, response);
         }
 
